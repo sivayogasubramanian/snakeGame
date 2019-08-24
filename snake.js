@@ -51,9 +51,11 @@ grow() {
 endgame() {       
     let x = this.body[this.body.length-1].x;
     let y = this.body[this.body.length-1].y; 
+    
     if (x < 0 || y < 0 || x > w-1 || y > h-1){
         return true;
     }
+    
     for (let i = 0; i < this.body.length-1; i++) {
         let part = this.body[i];
         if(part.x == x && part.y == y) {
@@ -61,4 +63,13 @@ endgame() {
         }
     }   
 }
+
+scorecount() {
+    let s = "SCORE: " + snake.body.length;
+        text(s, w/100, h/40);
+        fill(0, 102, 153);
+        textSize(0.75);
+}
+
+
 }
